@@ -8,20 +8,20 @@ import (
 )
 
 type LogEntry struct {
-	Timestamp    string // или time.Time, если будем парсить время
-	IP           string // IP адрес клиента
-	Method       string // HTTP метод (GET, POST и т.д.)
-	URL          string // путь запроса
-	StatusCode   int    // HTTP статус код (200, 404, 500)
-	ResponseTime int    // время ответа в миллисекундах
+	Timestamp    string
+	IP           string
+	Method       string
+	URL          string
+	StatusCode   int
+	ResponseTime int
 }
 
-// Statistics хранит агрегированные данные
+
 type Statistics struct {
-	TotalRequests   int            // общее количество запросов
-	ErrorCount      int            // количество ошибок (статус >= 400)
-	RequestsByIP    map[string]int // количество запросов с каждого IP
-	AverageRespTime float64        // среднее время ответа
+	TotalRequests   int
+	ErrorCount      int
+	RequestsByIP    map[string]int
+	AverageRespTime float64
 }
 
 func ParseLogLine(line string) (LogEntry, error) {
