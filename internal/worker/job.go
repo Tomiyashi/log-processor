@@ -16,12 +16,16 @@ type LogEntry struct {
 	ResponseTime int
 }
 
-
 type Statistics struct {
 	TotalRequests   int
 	ErrorCount      int
 	RequestsByIP    map[string]int
 	AverageRespTime float64
+}
+
+type IpCount struct {
+	IP    string
+	Count int
 }
 
 func ParseLogLine(line string) (LogEntry, error) {
